@@ -1,18 +1,11 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import './assets/scss/theme.scss';
-import Spinner from './components/Spinner';
+import Routes from './routes';
 
 function App() {
   return (
     <main>
-      <header>
-        <Button variant="primary">OK</Button>
-        <Button variant="success">New</Button>
-        <Button variant="danger">Delete</Button>
-        <br />
-        <Spinner />
-      </header>
+      <Routes />
     </main>
   );
 }
