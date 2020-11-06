@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "jest --detectOpenHandles --watch",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "production": "node index.js"
   },
   "author": "Raphael Collin",
   "license": "ISC",
