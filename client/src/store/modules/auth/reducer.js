@@ -28,6 +28,11 @@ export default produce((draft, action) => {
       draft.isLoading = false;
       draft.error = action.error;
       break;
+    case actionTypes.AUTH_LOGOUT:
+      draft.isLoading = false;
+      draft.token = null;
+      draft.error = null;
+      break;
     default:
   }
 }, initialState);

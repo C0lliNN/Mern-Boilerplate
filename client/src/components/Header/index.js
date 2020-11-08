@@ -1,8 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
-  const signed = true;
+  const signed = useSelector((state) => state.auth.token);
 
   return (
     <header className="bg-primary d-flex align-items-center justify-content-between py-3 px-4">

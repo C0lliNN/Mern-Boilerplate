@@ -29,11 +29,16 @@ export function authSuccess(payload) {
 }
 
 export function authFailed(error) {
-
   Swal.fire('Error!', error, 'error');
 
   return {
     type: actionTypes.AUTH_FAILED,
     error,
+  };
+}
+
+export function authLogout() {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
   };
 }
