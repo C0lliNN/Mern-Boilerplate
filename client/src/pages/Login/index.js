@@ -11,7 +11,6 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const { isLoading } = useSelector((state) => state.auth);
-  console.log(isLoading);
 
   const emailRef = register({
     required: {
@@ -78,7 +77,7 @@ export default function Login() {
             </span>
           )}
         </Form.Group>
-        <Button className="btn-block mt-4" type="submit">
+        <Button className="btn-block mt-4" type="submit" disabled={isLoading}>
           Login
         </Button>
       </Form>
