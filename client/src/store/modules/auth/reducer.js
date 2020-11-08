@@ -25,6 +25,7 @@ export default produce((draft, action) => {
       draft.token = action.payload.token;
       break;
     case actionTypes.AUTH_FAILED:
+      draft.isLoading = false;
       draft.error = action.error;
       break;
     default:

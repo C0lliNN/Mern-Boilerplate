@@ -1,9 +1,10 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import api from '../../../services/api';
 import * as actionTypes from './types';
-import { authFailed, authSuccess } from './action';
+import { authFailed, authStart, authSuccess } from './action';
 
 function* login(action) {
+  yield put(authStart());
   try {
     const { data } = yield call(api.post, '/login', action.payload);
     yield put(authSuccess(data));
@@ -16,6 +17,7 @@ function* login(action) {
 }
 
 function* signup(action) {
+  yield put(authStart());
   try {
     const { data } = yield call(api.post, '/signup', action.payload);
     yield put(authSuccess(data));
