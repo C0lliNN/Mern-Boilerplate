@@ -3,25 +3,25 @@ import api from '../../../services/api';
 import * as actionTypes from './types';
 import { authFailed, authSuccess } from './action';
 
-function* login(payload) {
+function* login(action) {
   try {
-    const { data } = yield call(api.post, '/login', payload);
+    const { data } = yield call(api.post, '/login', action.payload);
     yield put(authSuccess(data));
   } catch (error) {
     const errorMessage = error.response
-      ? error.response.error.message
+      ? error.response.data.message
       : error.message;
     yield put(authFailed(errorMessage));
   }
 }
 
-function* signup(payload) {
+function* signup(action) {
   try {
-    const { data } = yield call(api.post, '/signup', payload);
+    const { data } = yield call(api.post, '/signup', action.payload);
     yield put(authSuccess(data));
   } catch (error) {
     const errorMessage = error.response
-      ? error.response.error.message
+      ? error.response.data.message
       : error.message;
     yield put(authFailed(errorMessage));
   }

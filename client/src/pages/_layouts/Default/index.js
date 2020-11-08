@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Header from '../../../components/Header';
 
 export default function DefaultLayout({ children }) {
   return (
     <>
-      <nav>
-        <h1>MERN Boilerplate</h1>
-      </nav>
+      <Header />
       {children}
     </>
   );

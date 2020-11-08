@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import * as actionTypes from './types';
 
 export function loginRequest(email, password) {
@@ -28,6 +29,9 @@ export function authSuccess(payload) {
 }
 
 export function authFailed(error) {
+
+  Swal.fire('Error!', error, 'error');
+
   return {
     type: actionTypes.AUTH_FAILED,
     error,
