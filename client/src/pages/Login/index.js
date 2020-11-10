@@ -77,7 +77,12 @@ export default function Login() {
             </span>
           )}
         </Form.Group>
-        <Button className="btn-block mt-4" type="submit" disabled={isLoading}>
+        <Button
+          className="btn-block mt-4"
+          type="submit"
+          role="button"
+          disabled={isLoading}
+        >
           Login
         </Button>
       </Form>
