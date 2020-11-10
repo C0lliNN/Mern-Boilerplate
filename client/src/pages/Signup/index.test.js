@@ -1,9 +1,4 @@
-import {
-  fireEvent,
-  getAllByPlaceholderText,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import faker from 'faker';
 import renderWrapper from '../../helpers/render-wrapper';
@@ -144,16 +139,14 @@ describe('<Signup />', () => {
         screen.getByText('Confirm Password is required'),
       ).toBeInTheDocument(),
     );
-  })
+  });
   it('should not submit the form if the passwords do not match', async () => {
     data.confirmPassword = '123';
 
     await exec();
 
     await waitFor(() =>
-      expect(
-        screen.getByText("The password don't match"),
-      ).toBeInTheDocument(),
+      expect(screen.getByText("The password don't match")).toBeInTheDocument(),
     );
   });
   it('should submit the form and login the user if email and password are valid', async () => {

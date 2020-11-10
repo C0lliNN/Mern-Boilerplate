@@ -232,6 +232,7 @@ export default function Home() {
                 <Button
                   size="sm p-1"
                   variant="success"
+                  title="Complete"
                   onClick={() => handleCompleteTodo(todo.id)}
                 >
                   <MdDone size={20} />
@@ -240,6 +241,7 @@ export default function Home() {
               <Button
                 size="sm p-1 mx-1"
                 variant="primary"
+                title="Info"
                 onClick={() => showDetailsModal(todo)}
               >
                 <MdInfoOutline size={20} />
@@ -247,6 +249,7 @@ export default function Home() {
               <Button
                 size="sm p-1"
                 variant="danger"
+                title="Delete"
                 onClick={() => handleDeleteTodo(todo.id)}
               >
                 <MdDelete size={20} />

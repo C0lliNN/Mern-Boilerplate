@@ -18,13 +18,28 @@ export default {
         },
       ],
     }),
-  post: () =>
-    Promise.resolve({
-      data: {
+  post: (url, data) => {
+    let payload = null;
+
+    if (url === '/todos') {
+      payload = {
+        ...data,
+        id: 3,
+        completed: false,
+      };
+    } else {
+      payload = {
         token: 'TOKEN',
-        id: '1',
+        id: 1,
         email: faker.internet.email(),
         name: faker.name.findName(),
-      },
-    }),
+      };
+    }
+
+    return Promise.resolve({
+      data: payload,
+    });
+  },
+  patch: () => Promise.resolve(),
+  delete: () => Promise.resolve(),
 };
