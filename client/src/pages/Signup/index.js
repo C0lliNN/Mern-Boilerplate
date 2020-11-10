@@ -49,7 +49,7 @@ export default function Signup() {
     },
     maxLength: {
       value: 64,
-      message: 'Only names up to 64 chars are allowed',
+      message: 'Only passwords up to 64 chars are allowed',
     },
   });
 
@@ -142,7 +142,12 @@ export default function Signup() {
             </span>
           )}
         </Form.Group>
-        <Button className="btn-block mt-4" type="submit" disabled={isLoading}>
+        <Button
+          className="btn-block mt-4"
+          type="submit"
+          role="button"
+          disabled={isLoading}
+        >
           Signup
         </Button>
       </Form>
