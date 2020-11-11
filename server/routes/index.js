@@ -16,12 +16,10 @@ router.use('/api/v1', users);
 router.use('/api/v1/todos', todos);
 
 if (process.env.NODE_ENV === 'production') {
-  router.use(express.static('../client/build'));
+  router.use(express.static(path.resolve(__dirname, '../public')));
 
   router.get('*', (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, '../../client', 'build', 'index.html'),
-    );
+    res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
   });
 }
 
