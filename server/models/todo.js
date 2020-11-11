@@ -36,9 +36,10 @@ function validateTodo(data) {
   const validator = Joi.object({
     title: Joi.string().required().min(MIN_TITLE_LENGTH).max(MAX_TITLE_LENGTH),
     description: Joi.string()
+      .allow('')
       .min(MIN_DESCRIPTION_LENGTH)
       .max(MAX_DESCRIPTION_LENGTH),
-    completed: Joi.boolean()
+    completed: Joi.boolean(),
   });
 
   return validator.validate(data);
